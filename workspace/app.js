@@ -1,38 +1,25 @@
 const express = require('express');
-const req = require('express/lib/request');
+const calculatorRouter = require('./routers/calculator');
 
 const app = express();
 
-app.get('/',(req, res)=>{
+app.use(express.json());
 
-    console.log("here");
-    res.send("I am Respons");
+app.get('/',(req, res)=>{
+    res.send("this is response");
 
 });
- app.get('/add', (req, res)=>{
 
-     //console.log("Application");
-     let n1=6;
-     let n2= 8;
-     let sum=n1+n2;
-     res.send("sum  = ", sum);//  express deprecated res.send(body, status): Use res.status(status).send(body)
-     res.status("sum",sum);
- })
+// app.get('/add', (req, res)=>{
+//     let n1 = 3;
+//     let n2 = 4;
+//     let sum = n1+n2;
+//     // res.send("Sum = " + sum);
+//     res.send(`Sum = ${sum}`);
+// });
+
+app.use('/calculator',calculatorRouter);
 
 
-app.post('/add',(req, res)=>{
-    
-    console.log(req.body);
-    // let n1=4;
-    // let n2= 9;
-    let sum=n1+n2;
-    //let sum=0;
-     res.send("sum  = ", sum);
-
-})
-//  express deprecated res.send(body, status): Use res.status(status).send(body)
-
-// var msg =  require('./Message.js');
-// console.log(msg);
 
 app.listen(3000);
