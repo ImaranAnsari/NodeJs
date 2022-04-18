@@ -1,23 +1,23 @@
 //register
-module.exports.register = (req, res) =>{
+module.exports.register = async (req, res) =>{
 
     res.send(req.body);
 }
 
 //get 
-module.exports.get = (req, res) =>{
+module.exports.get = async (req, res) =>{
 
     res.send(req.body);
 }
 
 //update
-module.exports.update = (req, res) =>{
+module.exports.update = async (req, res) =>{
 
     res.send(req.body);
 }
 
 //delete
-module.exports.delete = (req, res) =>{
+module.exports.delete = async (req, res) =>{
 
     res.send(req.body);
 }
