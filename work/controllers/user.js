@@ -1,6 +1,9 @@
+const userModel = require(`../models/user`);
+
+
 //register
 module.exports.register = (req, res) =>{
-
+    userModel.insert(req, res);
     res.send(req.body);
 }
 
