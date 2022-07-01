@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.18.1"
   },
-  "name": "app.js",
+  "name": "app",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -10,6 +10,5 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "description": ""
 }
