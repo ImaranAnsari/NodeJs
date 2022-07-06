@@ -5,12 +5,13 @@ module.exports.insert = async (userData) => {
     let id = 0;
     try {
         let query = "INSERT INTO `users`(`name`, `email`, `password`, `remark`) VALUES (?,?,?,?)";
-        
+        //console.log(query);
+        //console.log([userData.name, userData.email, userData.password, userData.remark]);
         //execute
         let result = await db.execute(query,[userData.name, userData.email, userData.password, userData.remark]);
         id = result[0].insertId;
     } catch (error) {
-        console.log(error);
+        console.log("12",error.message);
     }
     return id;
 }

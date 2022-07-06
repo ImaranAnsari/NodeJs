@@ -12,4 +12,6 @@ app.get('/',(req, res)=>{
 
 app.use('/user',userRoute);
 
-app.listen(3000);
+app.listen(3000,()=>{
+    console.log("I am running")
+});

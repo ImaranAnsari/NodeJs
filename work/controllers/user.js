@@ -2,11 +2,16 @@ const userModel = require('../models/user');
 
 //register
 module.exports.register = async (req, res) => {
+    try {
+        console.log("I am here");
     let insertedId = await userModel.insert(req.body);
     if(insertedId > 0){
         res.send({status:"success", data:{id:insertedId}});
     } else {
         res.send({status:"error", message:"User registration failed"});
+    }
+    } catch (error) {
+        console.log(error.message)
     }
 }
 
